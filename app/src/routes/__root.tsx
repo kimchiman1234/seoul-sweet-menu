@@ -120,11 +120,12 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportHiggsfieldError(error, { boundary: "tanstack_root_error_component" });
+    const normalizedError = error instanceof Error ? error : new Error(String(error));
+    reportHiggsfieldError(normalizedError, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
   return (
