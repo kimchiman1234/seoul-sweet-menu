@@ -250,7 +250,7 @@ html{scroll-behavior:smooth}body{margin:0}.ss{font-family:'DM Sans',Arial,sans-s
 .ss-qr-details .ss-hot-label{color:#d45b35;font-weight:700}
 
 /* Seasonal feature slot: half the height of the autoplay hero, ready for a future latte video. */
-.ss-winter-feature{height:min(33svh,338px);min-height:195px;max-width:680px;margin:0 auto;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 15%,#b98b65 0%,transparent 48%),linear-gradient(145deg,#3d2925,#765043 55%,#392725);color:#fff6e8}
+.ss-winter-feature{height:min(33svh,338px);min-height:195px;max-width:680px;margin:0 auto;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:linear-gradient(rgba(20,25,35,.25),rgba(20,25,35,.4)),url("/videos/Cozy%20Seoul%20Winter%20Caf%C3%A9%20Animation.gif") center center / cover no-repeat;color:#fff6e8}
 .ss-winter-feature:before{content:"";position:absolute;inset:13px;border:1px solid #fff3;pointer-events:none}
 .ss-winter-feature-inner{position:relative;padding:25px}
 .ss-winter-kicker{font-size:10px;letter-spacing:.2em;font-weight:700;color:#f5d2a5}
