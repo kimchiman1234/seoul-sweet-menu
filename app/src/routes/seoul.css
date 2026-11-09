@@ -265,3 +265,43 @@ html{scroll-behavior:smooth}body{margin:0}.ss{font-family:'DM Sans',Arial,sans-s
 .ss-qr-footer .ss-footer-website{font-family:'DM Sans',Arial,sans-serif;font-size:13px;letter-spacing:.03em;font-weight:600;margin-left:0}
 
 .ss-qr-note.text-red-600{color:#DC2626!important}
+
+
+/* Pure Ssal rice typography */
+.ss-video-overlay .ss-pure-title {
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  font-family: Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -.045em;
+  text-shadow: 0 3px 12px #0009;
+}
+
+.ss-video-overlay .ss-rice-title {
+  display: inline-block;
+  color: #f4e5c4;
+  background-color: #f4e5c4;
+  background-image:
+    radial-gradient(ellipse 3px 6px at 9px 12px, #fff7df 70%, transparent 80%),
+    radial-gradient(ellipse 3px 6px at 27px 31px, #d1b887 70%, transparent 80%),
+    linear-gradient(145deg, #fff9e9, #c7aa70);
+  background-size: 38px 43px, 38px 43px, 100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: .3px #f5e9d1;
+  font-family: Georgia, serif;
+  font-style: normal;
+  letter-spacing: -.055em;
+  filter: drop-shadow(0 3px 4px #0008);
+}
+
+.ss-video-overlay .ss-rice-stalk {
+  display: inline-block;
+  width: .72em;
+  height: 1.35em;
+  object-fit: contain;
+  vertical-align: -.23em;
+  margin-left: -.12em;
+  filter: drop-shadow(0 3px 4px #0008);
+}

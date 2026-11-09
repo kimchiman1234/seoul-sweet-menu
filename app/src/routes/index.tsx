@@ -56,9 +56,9 @@ function Home(){
  return <div className="ss ss-qr ss-video-first">
  <header className="ss-qr-header"><a href="#top" className="ss-qr-logo"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3LGS8OOy9qmhM5PMN00gEsznODx/a4faabc8-38f5-4d7b-97a6-e8896299a813.png" alt="" className="ss-logo-mark"/>SEOUL SWEET</a><a className="ss-top-menu-link" href="#menu">MENU ↓</a></header>
  <main>
- <section id="top" className="ss-video-hero" aria-label="Pure Ssal Cake featured video">
- <video autoPlay muted loop playsInline preload="auto" poster={photos.matcha} aria-label="Pure Ssal Cake"><source src="/videos/seoul-sweet-hero.mp4" type="video/mp4"/></video>
- <div className="ss-video-overlay"><span>KOREAN DESSERT CAFÉ · NYC</span><h1><span className="ss-strawberry-word" data-text="Pure Ssal">Pure Ssal</span><br/><em className="ss-matcha-word">Cake</em></h1></div>
+ <section id="top" className="ss-video-hero" aria-label="Pure Ssal featured video">
+ <video autoPlay muted loop playsInline preload="auto" poster={photos.matcha} aria-label="Pure Ssal"><source src="/videos/seoul-sweet-hero.mp4" type="video/mp4"/></video>
+ <div className="ss-video-overlay"><span>KOREAN DESSERT CAFÉ · NYC</span><h1><span className="ss-pure-title">Pure</span><br/><span className="ss-rice-title">Ssa</span><img className="ss-rice-stalk" src="/images/rice-stalk.svg" alt="" aria-hidden="true"/></h1></div>
  </section>
  <section className="ss-winter-feature" aria-label="New winter latte feature">
   <div className="ss-winter-feature-inner"><span className="ss-winter-kicker">NEW MENU · WINTER SPECIAL</span><h2>Winter Latte</h2><p>Something warm is coming.</p><span className="ss-winter-coming">COMING SOON</span></div>
