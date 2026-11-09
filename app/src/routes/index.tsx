@@ -58,7 +58,7 @@ function Home(){
  <main>
  <section id="top" className="ss-video-hero" aria-label="Pure Ssal featured video">
  <video autoPlay muted loop playsInline preload="auto" poster={photos.matcha} aria-label="Pure Ssal"><source src="/videos/seoul-sweet-hero.mp4" type="video/mp4"/></video>
- <div className="ss-video-overlay"><span>KOREAN DESSERT CAFÉ · NYC</span><h1><a href="#menu" className="ss-pure-ssal-link" aria-label="Explore Ssal Cake menu"><img className="ss-pure-ssal-logo" src="/images/pure-ssal-logo.png" alt="Pure Ssal"/></a></h1></div>
+ <div className="ss-video-overlay"><span>KOREAN DESSERT CAFÉ · NYC</span><h1><a href="#menu" className="ss-pure-ssal-link" aria-label="Explore Ssal Cake menu" onClick={() => setCat('Ssal Cake')}><img className="ss-pure-ssal-logo" src="/images/pure-ssal-logo.png" alt="Pure Ssal"/></a></h1></div>
  </section>
  <section className="ss-winter-feature" aria-label="New winter latte feature">
   <div className="ss-winter-feature-inner"><span className="ss-winter-kicker">NEW MENU · WINTER SPECIAL</span><h2>Winter Latte</h2><p>Something warm is coming.</p><span className="ss-winter-coming">COMING SOON</span></div>

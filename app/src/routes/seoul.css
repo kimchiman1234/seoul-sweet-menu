@@ -344,3 +344,12 @@ html{scroll-behavior:smooth}body{margin:0}.ss{font-family:'DM Sans',Arial,sans-s
 .ss-pure-ssal-link:hover .ss-pure-ssal-logo {
   transform: scale(1.03);
 }
+
+/* Smooth scrolling to cake menu */
+html {
+  scroll-behavior: smooth;
+}
+
+#menu {
+  scroll-margin-top: 80px;
+}
