@@ -38,7 +38,7 @@ items.filter(item=>item.cat==='Desserts').forEach(item=>{
 });
 const dessertOrder=['Yakgwa','Strawberry Yakgwa','Jooak','Strawberry Jooak','Injeolmi Jooak','Black Sesame Tiramisu','Injeolmi Tiramisu'];
 items.sort((a,b)=>a.cat==='Desserts'&&b.cat==='Desserts'?(dessertOrder.indexOf(a.name)<0?999:dessertOrder.indexOf(a.name))-(dessertOrder.indexOf(b.name)<0?999:dessertOrder.indexOf(b.name)):0);
-for(const name of ['Black Sesame Cake','Mugwort Cake','Chocolate Cake','Mango Cake','Strawberry Cake','Blueberry Cake','Pure Cake'])items.push({name,price:'',cat:'Gluten Free Cake',desc:'Soft, sponge-like texture'});
+for(const name of ['Black Sesame Cake','Mugwort Cake','Chocolate Cake','Mango Cake','Strawberry Cake','Blueberry Cake','Pure Cake'])items.push({name,price:'',cat:'Ssal Cake',desc:'Soft, sponge-like texture'});
 items.push(
 {name:'Black Sesame Bingsu',price:'',cat:'Bingsu',desc:'Rice cakes (tteok) and sweet red beans served on the side'},
 {name:'Injeolmi Bingsu',price:'',cat:'Bingsu',desc:'Rice cakes (tteok) and sweet red beans served on the side'},
@@ -49,7 +49,7 @@ items.push(
 {name:'Strawberry Matcha Bingsu',price:'',cat:'Bingsu'}
 );
 items.push({name:'Peanut Latte',price:'',cat:'New Menu'},{name:'Sweet Potato Latte',price:'',cat:'New Menu'},{name:'Seoul Fog',price:'',cat:'New Menu'});
-const cats=['All','New Menu','Coffee','Einspanner','Signature Coffee','Tea','Set','Matcha & Chocolate','Fresh Homemade','Bingsu','Desserts','Gluten Free Cake'];
+const cats=['All','New Menu','Ssal Cake','Bingsu','Coffee','Signature Coffee','Einspanner','Tea','Set','Matcha & Chocolate','Fresh Homemade','Desserts'];
 function Home(){
  const [cat,setCat]=useState('All');
  const shown=items.filter(x=>cat==='All'||x.cat===cat);
@@ -68,7 +68,7 @@ function Home(){
  <div className="ss-qr-tabs" role="group" aria-label="Menu categories">{cats.map(c=><button key={c} type="button" onClick={()=>setCat(c)} className={cat===c?'active':''} aria-pressed={cat===c}>{c}</button>)}</div>
  <div className="ss-qr-count">{cat==='All'?'ALL MENU':cat.toUpperCase()} <span>{shown.length} ITEMS</span></div>{cat==='Einspanner'&&<p className="ss-category-note">ICED ONLY</p>}
  {cat==='Einspanner'&&<p className="ss-einspanner-explainer"><strong>What is an Einspanner?</strong> A Korean café-style iced coffee topped with a thick layer of lightly sweetened cream. Enjoy it without stirring to taste the smooth cream and coffee together. <strong>Coffee is optional.</strong></p>}
- {cat==='Gluten Free Cake'&&<p className="ss-einspanner-explainer"><strong>What is Mugwort?</strong> Mugwort is an aromatic herb commonly used in Korean desserts. It has a distinctive earthy, slightly herbal flavor.</p>}
+ {cat==='Ssal Cake'&&<p className="ss-einspanner-explainer"><strong>What is Mugwort?</strong> Mugwort is an aromatic herb commonly used in Korean desserts. It has a distinctive earthy, slightly herbal flavor.</p>}
  <div className="ss-qr-items">{shown.map(item=><article className="ss-qr-item" key={item.name}><div className="ss-qr-details"><h2>{item.name}</h2>{item.desc&&!/^(hot or iced|iced only)$/i.test(item.desc)&&<p>{item.desc}</p>}{item.desc&&/^(hot or iced|iced only)$/i.test(item.desc)&&<small>{/^hot or iced$/i.test(item.desc)?<><span className="ss-hot-label">{item.desc.slice(0,3)}</span>{item.desc.slice(3)}</>:item.desc}</small>}{(item.name==='Flat White'||item.name==='Cappuccino')&&<small><span className="ss-hot-label">HOT</span> ONLY</small>}{item.cat==='Einspanner'&&cat==='All'&&<small>ICED ONLY</small>}{item.cat==='Tea'&&<small><span className="ss-hot-label">Hot</span> or iced</small>}{item.cat==='Fresh Homemade'&&<small>ICED ONLY</small>}</div>{item.price&&<strong>{item.price}</strong>}</article>)}</div>
  <p className="ss-qr-note text-red-600">If you have any food allergies, please inform a member of our team before ordering.</p>
  </section>
