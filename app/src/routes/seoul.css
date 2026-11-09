@@ -250,14 +250,14 @@ html{scroll-behavior:smooth}body{margin:0}.ss{font-family:'DM Sans',Arial,sans-s
 .ss-qr-details .ss-hot-label{color:#d45b35;font-weight:700}
 
 /* Seasonal feature slot: half the height of the autoplay hero, ready for a future latte video. */
-.ss-winter-feature{height:min(44svh,450px);min-height:260px;max-width:680px;margin:0 auto;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 15%,#b98b65 0%,transparent 48%),linear-gradient(145deg,#3d2925,#765043 55%,#392725);color:#fff6e8}
+.ss-winter-feature{height:min(33svh,338px);min-height:195px;max-width:680px;margin:0 auto;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 75% 15%,#b98b65 0%,transparent 48%),linear-gradient(145deg,#3d2925,#765043 55%,#392725);color:#fff6e8}
 .ss-winter-feature:before{content:"";position:absolute;inset:13px;border:1px solid #fff3;pointer-events:none}
 .ss-winter-feature-inner{position:relative;padding:25px}
 .ss-winter-kicker{font-size:10px;letter-spacing:.2em;font-weight:700;color:#f5d2a5}
 .ss-winter-feature h2{font-family:Georgia,serif;font-size:clamp(38px,9vw,65px);font-weight:400;letter-spacing:-.05em;line-height:1.1;margin:18px 0 10px}
 .ss-winter-feature p{font-size:13px;letter-spacing:.025em;margin:0 0 24px;color:#f3dfd1}
 .ss-winter-coming{display:inline-block;border:1px solid #ffffff80;border-radius:40px;padding:10px 19px;font-size:9px;letter-spacing:.17em;font-weight:700}
-@media(max-width:420px){.ss-winter-feature{height:calc((100svh - 58px)/2);min-height:240px}}
+@media(max-width:420px){.ss-winter-feature{height:calc((100svh - 58px)*0.375);min-height:180px}}
 
 .ss-qr-footer{justify-content:center;align-items:center;padding:24px 20px}
 .ss-qr-footer .ss-footer-brand{gap:18px}
