@@ -1,0 +1,19 @@
+
+/* Pure Ssal Cake — clean white hero title */
+.ss-video-overlay .ss-strawberry-word,
+.ss-video-overlay .ss-matcha-word {
+  color: #fff !important;
+  background: none !important;
+  -webkit-text-fill-color: #fff !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+.ss-video-overlay .ss-strawberry-word::before,
+.ss-video-overlay .ss-strawberry-word::after,
+.ss-video-overlay .ss-matcha-word::before,
+.ss-video-overlay .ss-matcha-word::after {
+  content: none !important;
+  display: none !important;
+}
