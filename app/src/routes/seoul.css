@@ -326,3 +326,21 @@ html{scroll-behavior:smooth}body{margin:0}.ss{font-family:'DM Sans',Arial,sans-s
 .ss-video-hero {
   margin-bottom: 20px;
 }
+
+/* Clickable Pure Ssal logo */
+.ss-pure-ssal-link {
+  display: inline-block;
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ss-pure-ssal-link .ss-pure-ssal-logo {
+  transition: transform 0.25s ease;
+}
+
+.ss-pure-ssal-link:hover .ss-pure-ssal-logo {
+  transform: scale(1.03);
+}
