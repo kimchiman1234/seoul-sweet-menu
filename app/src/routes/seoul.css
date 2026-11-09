@@ -511,3 +511,34 @@ html {
 .ss-qr-header .ss-lang-control{display:flex;flex-direction:column;align-items:flex-end;gap:3px;font-size:9px;letter-spacing:.12em;font-weight:700;color:inherit;}
 .ss-qr-header .ss-lang-control select{max-width:142px;min-width:105px;padding:5px 22px 5px 8px;border:1px solid rgba(156,121,76,.35);border-radius:5px;background:#fffaf3;color:#58412c;font-size:12px;font-weight:500;letter-spacing:normal;cursor:pointer;}
 @media(max-width:480px){.ss-qr-header .ss-header-actions{gap:3px}.ss-qr-header .ss-lang-control select{max-width:118px;min-width:100px;font-size:11px}.ss-qr-header .ss-lang-control span{font-size:8px}}
+
+/* MENU and language selector alignment */
+.ss-qr-header .ss-header-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0 !important;
+}
+
+.ss-qr-header .ss-lang-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0 !important;
+}
+
+/* Hide LANGUAGE text */
+.ss-qr-header .ss-lang-control > span {
+  display: none !important;
+}
+
+/* Place dropdown directly below MENU */
+.ss-qr-header .ss-top-menu-link {
+  padding: 0 !important;
+  margin: 0 0 4px 0 !important;
+  line-height: 1.2;
+}
+
+.ss-qr-header .ss-lang-control select {
+  margin: 0 !important;
+}
