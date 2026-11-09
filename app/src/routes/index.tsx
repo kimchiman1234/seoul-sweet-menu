@@ -1,5 +1,5 @@
 import {createFileRoute} from '@tanstack/react-router';
-import {useState} from 'react';
+import {useEffect,useRef,useState} from 'react';
 import './seoul.css';
 export const Route=createFileRoute('/')({component:Home});
 const photos={
@@ -52,11 +52,46 @@ items.push({name:'Peanut Latte',price:'',cat:'New Menu'},{name:'Sweet Potato Lat
 const cats=['All','New Menu','Ssal Cake','Bingsu','Coffee','Signature Coffee','Einspanner','Tea','Set','Matcha & Chocolate','Fresh Homemade','Desserts'];
 function Home(){
  const [cat,setCat]=useState('All');
+ const heroRef=useRef<HTMLElement>(null);
+
+ useEffect(()=>{
+  const hero=heroRef.current;
+  if(!hero)return;
+
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+  let frame=0;
+
+  const update=()=>{
+   frame=0;
+   if(reduced.matches){
+    hero.style.removeProperty('--hero-progress');
+    return;
+   }
+   const rect=hero.getBoundingClientRect();
+   const progress=Math.min(1,Math.max(0,-rect.top/rect.height));
+   hero.style.setProperty('--hero-progress',String(progress));
+  };
+
+  const onScroll=()=>{
+   if(!frame)frame=requestAnimationFrame(update);
+  };
+
+  update();
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+
+  return ()=>{
+   window.removeEventListener('scroll',onScroll);
+   window.removeEventListener('resize',onScroll);
+   if(frame)cancelAnimationFrame(frame);
+  };
+ },[]);
+
  const shown=items.filter(x=>cat==='All'||x.cat===cat);
  return <div className="ss ss-qr ss-video-first">
  <header className="ss-qr-header"><a href="#top" className="ss-qr-logo"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3LGS8OOy9qmhM5PMN00gEsznODx/a4faabc8-38f5-4d7b-97a6-e8896299a813.png" alt="" className="ss-logo-mark"/>SEOUL SWEET</a><a className="ss-top-menu-link" href="#menu">MENU ↓</a></header>
  <main>
- <section id="top" className="ss-video-hero" aria-label="Pure Ssal featured video">
+ <section id="top" ref={heroRef} className="ss-video-hero" aria-label="Pure Ssal featured video">
  <video autoPlay muted loop playsInline preload="auto" poster={photos.matcha} aria-label="Pure Ssal"><source src="/videos/seoul-sweet-hero.mp4" type="video/mp4"/></video>
  <div className="ss-video-overlay"><span>KOREAN DESSERT CAFÉ · NYC</span><h1><a href="#menu" className="ss-pure-ssal-link" aria-label="Explore Ssal Cake menu" onClick={() => setCat('Ssal Cake')}><img className="ss-pure-ssal-logo" src="/images/pure-ssal-logo.png" alt="Pure Ssal"/></a></h1></div>
  </section>

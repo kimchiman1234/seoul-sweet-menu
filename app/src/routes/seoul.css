@@ -397,3 +397,67 @@ html {
     animation: none !important;
   }
 }
+
+/* Remove white circular border around Pure Ssal logo */
+.ss-video-overlay a.ss-pure-ssal-link {
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  max-width: none;
+  min-height: 0;
+  display: inline-block;
+}
+
+/* Pure Ssal — scroll-controlled cinematic hero */
+.ss-video-hero {
+  --hero-progress: 0;
+  isolation: isolate;
+}
+
+.ss-video-hero video {
+  animation: none !important;
+  transform: scale(calc(1 + var(--hero-progress) * .22));
+  transform-origin: center;
+  will-change: transform;
+}
+
+.ss-video-hero .ss-video-overlay {
+  animation: none !important;
+  opacity: clamp(0,calc(1 - var(--hero-progress) * 2),1);
+  transform: translateY(calc(var(--hero-progress) * -45px));
+  will-change: opacity,transform;
+}
+
+.ss-video-hero::after {
+  animation: none !important;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.12),
+      rgba(0,0,0,calc(.35 + var(--hero-progress) * .45))
+    );
+}
+
+/* Remove circular outline from Pure Ssal logo */
+.ss-video-overlay a.ss-pure-ssal-link {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  min-height: 0;
+  max-width: none;
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-video-hero video {
+    transform: none !important;
+  }
+  .ss-video-hero .ss-video-overlay {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
