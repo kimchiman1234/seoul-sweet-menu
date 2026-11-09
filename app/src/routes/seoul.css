@@ -263,3 +263,5 @@ html{scroll-behavior:smooth}body{margin:0}.ss{font-family:'DM Sans',Arial,sans-s
 .ss-qr-footer .ss-footer-brand{gap:18px}
 .ss-qr-footer .ss-footer-instagram{margin-left:0}
 .ss-qr-footer .ss-footer-website{font-family:'DM Sans',Arial,sans-serif;font-size:13px;letter-spacing:.03em;font-weight:600;margin-left:0}
+
+.ss-qr-note.text-red-600{color:#DC2626!important}
