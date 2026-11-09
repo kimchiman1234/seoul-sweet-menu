@@ -491,7 +491,7 @@ html {
 .ss-winter-feature-inner {
   position: relative;
   z-index: 1;
-  opacity: clamp(0,calc(1 - var(--winter-progress) * 2),1);
+  opacity: clamp(0,calc(1 - var(--winter-progress) * 2.85),1);
   transform: translateY(calc(var(--winter-progress) * -30px));
   will-change: opacity,transform;
 }
