@@ -305,3 +305,19 @@ html{scroll-behavior:smooth}body{margin:0}.ss{font-family:'DM Sans',Arial,sans-s
   margin-left: -.12em;
   filter: drop-shadow(0 3px 4px #0008);
 }
+
+/* Pure Ssal PNG logo */
+.ss-video-overlay .ss-pure-ssal-logo {
+  display: block;
+  width: min(72vw, 400px);
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,.35));
+}
+
+@media (max-width: 480px) {
+  .ss-video-overlay .ss-pure-ssal-logo {
+    width: min(76vw, 310px);
+  }
+}
