@@ -321,3 +321,8 @@ html{scroll-behavior:smooth}body{margin:0}.ss{font-family:'DM Sans',Arial,sans-s
     width: min(76vw, 310px);
   }
 }
+
+/* Space between hero video and Winter Latte section */
+.ss-video-hero {
+  margin-bottom: 20px;
+}
