@@ -1,5 +1,3 @@
-@kimchiman1234 ➜ /workspaces/seoul-sweet-menu (main) $ cd /workspaces/seoul-sweet-menu/app
-cat src/routes/index.tsx
 import {createFileRoute} from '@tanstack/react-router';
 import {useEffect,useRef,useState} from 'react';
 import './seoul.css';
