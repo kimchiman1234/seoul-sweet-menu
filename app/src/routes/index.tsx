@@ -58,6 +58,31 @@ function Home(){
  useEffect(()=>{try{localStorage.setItem('seoul-sweet-lang',lang);}catch{} document.documentElement.lang=lang;},[lang]);
  const t=(text:string)=>tr(text,lang);
  const heroRef=useRef<HTMLElement>(null);
+ const videoRef=useRef<HTMLVideoElement>(null);
+
+ useEffect(()=>{
+  const video=videoRef.current;
+  if(!video)return;
+
+  video.muted=true;
+  video.defaultMuted=true;
+  video.playsInline=true;
+  video.setAttribute('webkit-playsinline','true');
+
+  const tryPlay=()=>{
+   if(!video.paused)return;
+   video.play().catch(()=>{});
+  };
+
+  tryPlay();
+  video.addEventListener('loadeddata',tryPlay);
+  document.addEventListener('visibilitychange',tryPlay);
+
+  return ()=>{
+   video.removeEventListener('loadeddata',tryPlay);
+   document.removeEventListener('visibilitychange',tryPlay);
+  };
+ },[]);
  const winterRef=useRef<HTMLElement>(null);
 
  useEffect(()=>{
@@ -132,7 +157,7 @@ function Home(){
  <header className="ss-qr-header"><a href="#top" className="ss-qr-logo"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_3LGS8OOy9qmhM5PMN00gEsznODx/a4faabc8-38f5-4d7b-97a6-e8896299a813.png" alt="" className="ss-logo-mark"/>SEOUL SWEET</a><div className="ss-header-actions"><a className="ss-top-menu-link" href="#menu">MENU ↓</a><label className="ss-lang-control"><span>LANGUAGE</span><select aria-label="Choose menu language" value={lang} onChange={e=>setLang(e.target.value as Lang)}>{languages.map(x=><option key={x.code} value={x.code}>{x.label}</option>)}</select></label></div></header>
  <main>
  <section id="top" ref={heroRef} className="ss-video-hero" aria-label="Pure Ssal featured video">
- <video autoPlay muted loop playsInline preload="auto" poster={photos.matcha} aria-label="Pure Ssal"><source src="/videos/seoul-sweet-hero.mp4" type="video/mp4"/></video>
+ <video autoPlay muted loop playsInline preload="auto" disablePictureInPicture aria-label="Pure Ssal" ref={videoRef}><source src="/videos/seoul-sweet-hero.mp4" type="video/mp4"/></video>
  <div className="ss-video-overlay"><span>KOREAN DESSERT CAFÉ · NYC</span><h1><a href="#menu" className="ss-pure-ssal-link" aria-label="Explore Ssal Cake menu" onClick={() => setCat('Ssal Cake')}><img className="ss-pure-ssal-logo" src="/images/pure-ssal-logo.png" alt="Pure Ssal"/></a></h1></div>
  </section>
  <section ref={winterRef} className="ss-winter-feature" aria-label="New winter latte feature">
