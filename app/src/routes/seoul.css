@@ -542,3 +542,13 @@ html {
 .ss-qr-header .ss-lang-control select {
   margin: 0 !important;
 }
+
+/* Hide MENU link, keep language selector */
+.ss-qr-header .ss-top-menu-link {
+  display: none !important;
+}
+
+.ss-qr-header .ss-header-actions {
+  justify-content: center;
+  gap: 0 !important;
+}
