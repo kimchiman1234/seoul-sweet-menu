@@ -461,3 +461,47 @@ html {
     transform: none !important;
   }
 }
+
+/* Winter Latte — cinematic scroll animation */
+.ss-winter-feature {
+  --winter-progress: 0;
+  isolation: isolate;
+}
+
+.ss-winter-feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: inherit;
+  transform: scale(calc(1 + var(--winter-progress) * .22));
+  transform-origin: center;
+  will-change: transform;
+}
+
+.ss-winter-feature::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: rgba(0,0,0,calc(var(--winter-progress) * .35));
+}
+
+.ss-winter-feature-inner {
+  position: relative;
+  z-index: 1;
+  opacity: clamp(0,calc(1 - var(--winter-progress) * 2),1);
+  transform: translateY(calc(var(--winter-progress) * -30px));
+  will-change: opacity,transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-winter-feature::before {
+    transform: none !important;
+  }
+  .ss-winter-feature-inner {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
